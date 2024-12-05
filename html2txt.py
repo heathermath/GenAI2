@@ -18,12 +18,6 @@ drive.mount('/content/drive')
 
 from inscriptis import get_text
 
-import os
-from google.colab import drive
-
-# Mount Google Drive
-drive.mount('/content/drive')
-
 def convert_html_to_text(html_path, output_path):
   with open(html_path, "r") as f:
     html = f.read()
@@ -33,23 +27,12 @@ def convert_html_to_text(html_path, output_path):
   with open(output_path, "w") as f:
     f.write(text)
 
-# prompt: read list of file names
-
-import os
-
 # Replace with your desired directory in Google Drive
 folder_path = '/content/drive/My Drive/grounding'
 
 file_names = []
 for filename in os.listdir(folder_path):
   file_names.append(filename)
-
-print(file_names)
-
-filename=file_names[1]
-html_path = os.path.join(folder_path, filename)
-output_path = os.path.join(folder_path, 'mytext',filename.replace(".html", ".txt"))
-print(html_path, output_path)
 
 for filename in file_names[1:]:
   html_path = os.path.join(folder_path, filename)
