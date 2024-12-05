@@ -56,7 +56,7 @@ with tab2:
         all_texts = []
         for uploaded_file in uploaded_files:
       
-            f = open("uploaded_file", "r")
+            f = open(uploaded_file, "r")
             context=f.read()
             all_texts.append(context)
 
