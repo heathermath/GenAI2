@@ -56,8 +56,7 @@ with tab2:
         all_texts = []
         for uploaded_file in uploaded_files:
       
-            f = open(uploaded_file, "r")
-            context=f.read()
+            context = uploaded_file.getvalue()
             all_texts.append(context)
 
         # Combine all contexts into a single string
