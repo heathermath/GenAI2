@@ -55,8 +55,10 @@ with tab2:
         # Combine all PDF content
         all_texts = []
         for uploaded_file in uploaded_files:
-      
-            context = uploaded_file.getvalue()
+            try:
+             context=uploaded_file.read().decode('utf-8')
+            except Exception as e:
+              print(f"Error reading text file: {e}")
             all_texts.append(context)
 
         # Combine all contexts into a single string
